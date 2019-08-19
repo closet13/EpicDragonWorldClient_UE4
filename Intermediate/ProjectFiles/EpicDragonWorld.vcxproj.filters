@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\EpicDragonWorld.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{C9F9D987-F3E3-4592-98B3-3F9D75C71C09}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\EpicDragonWorld.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\EpicDragonWorldEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{095F9417-799C-4C05-BC48-E8C89B155230}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\EpicDragonWorld">
+      <UniqueIdentifier>{22704B5E-B7C3-47D0-BCEA-3BB07D2A8B01}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\EpicDragonWorld\BitConverter.cpp">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\EpicDragonWorld\BitConverter.h">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\EpicDragonWorld\EpicDragonWorld.Build.cs">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\EpicDragonWorld\EpicDragonWorld.cpp">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\EpicDragonWorld\EpicDragonWorld.h">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\EpicDragonWorld\NetworkManager.cpp">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\EpicDragonWorld\NetworkManager.h">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </ClInclude>
+    <None Include="cpp.hint" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\EpicDragonWorld\Encryption.h">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\EpicDragonWorld\ReceivablePacket.h">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\EpicDragonWorld\SendablePacket.h">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\EpicDragonWorld\Encryption.cpp">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\EpicDragonWorld\ReceivablePacket.cpp">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\EpicDragonWorld\SendablePacket.cpp">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
