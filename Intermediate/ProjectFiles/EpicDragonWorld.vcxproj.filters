@@ -59,12 +59,6 @@
     <ClInclude Include="..\..\Source\EpicDragonWorld\Encryption.h">
       <Filter>Source\EpicDragonWorld</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\EpicDragonWorld\ReceivablePacket.h">
-      <Filter>Source\EpicDragonWorld</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\EpicDragonWorld\SendablePacket.h">
-      <Filter>Source\EpicDragonWorld</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\EpicDragonWorld\Encryption.cpp">

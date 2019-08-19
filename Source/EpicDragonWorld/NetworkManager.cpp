@@ -9,8 +9,8 @@
 #include <Runtime\Sockets\Public\SocketSubsystem.h>
 #include <Runtime\Networking\Public\Interfaces\IPv4\IPv4Address.h>
 #include <EpicDragonWorld\BitConverter.h>
-#include <EpicDragonWorld\SendablePacket.h>
-#include <EpicDragonWorld\ReceivablePacket.h>
+#include <EpicDragonWorld\SendablePacket.cpp>
+#include <EpicDragonWorld\ReceivablePacket.cpp>
 
 static FSocket* socket;
 static FIPv4Address ipAddress;
@@ -68,8 +68,8 @@ void UNetworkManager::ChannelRead()
 {
 	int32 packetContentLength = 0;
 	int32 packetContentSizeLength = 2; // We use 2 bytes for short value.
-	unsigned char* bufferLength = new unsigned char[packetContentSizeLength];
-	unsigned char* bufferData = new unsigned char[0];
+	uint8_t* bufferLength = new uint8_t[packetContentSizeLength];
+	uint8_t* bufferData = new uint8_t[0];
 	uint32 length = 0;
 	while (socket != NULL && socket->GetConnectionState() == SCS_Connected)
 	{
@@ -78,19 +78,20 @@ void UNetworkManager::ChannelRead()
 			socket->Recv(bufferLength, packetContentSizeLength, packetContentSizeLength);
 			packetContentLength = BitConverter::ToInt16(bufferLength);
 			delete[] bufferData;
-			bufferData = new unsigned char[packetContentLength];
+			bufferData = new uint8_t[packetContentLength];
 			socket->Recv(bufferData, packetContentLength, packetContentLength);
 
 			// TODO: Decrypt bufferData
 			
-			ReceivablePacket packet = ReceivablePacket(bufferData);
-			switch (packet.ReadShort())
+			ReceivablePacket* packet = new ReceivablePacket(bufferData);
+			switch (packet->ReadShort())
 			{
 				case 1:
-					FString text = packet.ReadString();
+					FString text = packet->ReadString();
 					TestReceive(text);
 					break;
 			}
+			delete packet;
 		}
 	}
 }
@@ -115,15 +116,16 @@ void UNetworkManager::ChannelSend(const uint8_t* data, const uint16_t size)
 
 void UNetworkManager::TestSend(const FString text)
 {
-	SendablePacket packet = SendablePacket();
-	packet.WriteByte(255);
-	packet.WriteShort(32767);
-	packet.WriteInt(2147483647);
-	packet.WriteLong(9223372036854775807);
-	packet.WriteFloat(128.1);
-	packet.WriteDouble(256.2);
-	packet.WriteString(text);
-	ChannelSend(packet.GetSendableBytes(), packet.GetSize());
+	SendablePacket* packet = new SendablePacket();
+	packet->WriteByte(255);
+	packet->WriteShort(32767);
+	packet->WriteInt(2147483647);
+	packet->WriteLong(9223372036854775807);
+	packet->WriteFloat(128.1);
+	packet->WriteDouble(256.2);
+	packet->WriteString(text);
+	ChannelSend(packet->GetSendableBytes(), packet->GetSize());
+	delete packet;
 }
 
 void UNetworkManager::TestReceive(FString text)

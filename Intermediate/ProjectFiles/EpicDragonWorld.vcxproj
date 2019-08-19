@@ -366,8 +366,6 @@
   <ItemGroup>
     <ClCompile Include="..\..\Source\EpicDragonWorld\ReceivablePacket.cpp" />
     <ClCompile Include="..\..\Source\EpicDragonWorld\SendablePacket.cpp" />
-    <ClInclude Include="..\..\Source\EpicDragonWorld\ReceivablePacket.h" />
-    <ClInclude Include="..\..\Source\EpicDragonWorld\SendablePacket.h" />
     <None Include="..\..\EpicDragonWorld.uproject" />
     <None Include="..\..\Source\EpicDragonWorld.Target.cs" />
     <None Include="..\..\Source\EpicDragonWorldEditor.Target.cs" />
