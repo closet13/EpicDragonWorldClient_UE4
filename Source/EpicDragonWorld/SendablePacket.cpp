@@ -3,7 +3,6 @@
  * Date: August 14th 2019
  */
 
-#include "CoreMinimal.h"
 #include <EpicDragonWorld\BitConverter.h>
 
 class EPICDRAGONWORLD_API SendablePacket
