@@ -50,7 +50,7 @@ void UNetworkManager::Connect()
 	bool connected = socket->Connect(*addr);
 	if (connected)
 	{
-		std::thread listen(ChannelRead);
+		std::thread listen(&UNetworkManager::ChannelRead, this);
 		listen.detach();
 	}
 
@@ -58,10 +58,6 @@ void UNetworkManager::Connect()
 	{
 		Disconnected();
 	}
-}
-
-void UNetworkManager::Disconnected()
-{
 }
 
 void UNetworkManager::ChannelRead()
@@ -114,6 +110,8 @@ void UNetworkManager::ChannelSend(const uint8_t* data, const uint16_t size)
 	delete[] data;
 }
 
+// Sendable information.
+
 void UNetworkManager::TestSend(const FString text)
 {
 	SendablePacket* packet = new SendablePacket();
@@ -126,6 +124,12 @@ void UNetworkManager::TestSend(const FString text)
 	packet->WriteString(text);
 	ChannelSend(packet->GetSendableBytes(), packet->GetSize());
 	delete packet;
+}
+
+// Receivable events.
+
+void UNetworkManager::Disconnected()
+{
 }
 
 void UNetworkManager::TestReceive(FString text)
