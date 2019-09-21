@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\EpicDragonWorld.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{C9F9D987-F3E3-4592-98B3-3F9D75C71C09}</UniqueIdentifier>
+      <UniqueIdentifier>{2780D237-A257-4152-B653-A36CFE5691F7}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\EpicDragonWorld.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{095F9417-799C-4C05-BC48-E8C89B155230}</UniqueIdentifier>
+      <UniqueIdentifier>{5E9FF1FB-EC1A-4054-9AF0-DE80BDA42625}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\EpicDragonWorld">
-      <UniqueIdentifier>{22704B5E-B7C3-47D0-BCEA-3BB07D2A8B01}</UniqueIdentifier>
+      <UniqueIdentifier>{D43F4531-60AD-420F-9395-0B7F2D277C71}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\EpicDragonWorld\BitConverter.cpp">
       <Filter>Source\EpicDragonWorld</Filter>
@@ -47,16 +47,25 @@
     <ClInclude Include="..\..\Source\EpicDragonWorld\EpicDragonWorld.h">
       <Filter>Source\EpicDragonWorld</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\EpicDragonWorld\NetworkManager.cpp">
+    <ClCompile Include="..\..\Source\EpicDragonWorld\EpicDragonWorldCharacter.cpp">
       <Filter>Source\EpicDragonWorld</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\EpicDragonWorld\NetworkManager.h">
+    <ClInclude Include="..\..\Source\EpicDragonWorld\EpicDragonWorldCharacter.h">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\EpicDragonWorld\EpicDragonWorldGameMode.cpp">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\EpicDragonWorld\EpicDragonWorldGameMode.h">
       <Filter>Source\EpicDragonWorld</Filter>
     </ClInclude>
     <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\EpicDragonWorld\Encryption.h">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\EpicDragonWorld\NetworkManager.h">
       <Filter>Source\EpicDragonWorld</Filter>
     </ClInclude>
   </ItemGroup>
@@ -68,6 +77,9 @@
       <Filter>Source\EpicDragonWorld</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\EpicDragonWorld\SendablePacket.cpp">
+      <Filter>Source\EpicDragonWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\EpicDragonWorld\NetworkManager.cpp">
       <Filter>Source\EpicDragonWorld</Filter>
     </ClCompile>
   </ItemGroup>

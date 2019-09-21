@@ -14,6 +14,10 @@ class EPICDRAGONWORLD_API UNetworkManager : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 
+public:
+	UFUNCTION(BlueprintCallable, Category = "MMORPG Networking")
+	UNetworkManager *const GetNetworkManagerInstance();
+
 	UFUNCTION(BlueprintCallable, Category = "MMORPG Networking")
 	void SetConnectionSettings(const FString ip, const int32 port);
 
@@ -31,9 +35,11 @@ class EPICDRAGONWORLD_API UNetworkManager : public UBlueprintFunctionLibrary
 
 	// Receivable events.
 
-	UFUNCTION(BlueprintCallable, Category = "MMORPG Networking|Receivable Events|Disconnected")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "MMORPG Networking|Receivable Events|Disconnected")
 	void Disconnected();
+	virtual void Disconnected_Implementation();
 
-	UFUNCTION(BlueprintCallable, Category = "MMORPG Networking|Receivable Events|Test Receive")
-	void TestReceive(FString text);
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "MMORPG Networking|Receivable Events|Test Receive")
+	void TestReceive(const FString& text);
+	virtual void TestReceive_Implementation(const FString& text);
 };

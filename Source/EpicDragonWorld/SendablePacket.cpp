@@ -113,7 +113,7 @@ public:
 		uint8_t* result = new uint8_t[writeBufferSize + 2];
 
 		// TODO: Encrypt bytes.
-		// unsigned char* encryptedBytes = Encryption.Encrypt(writeBuffer);
+		// uint8_t* encryptedBytes = Encryption.Encrypt(writeBuffer);
 		uint8_t* encryptedBytes = writeBuffer;
 
 		// Create two bytes for length (short - max length 32767).

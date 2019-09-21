@@ -28,6 +28,11 @@ void UNetworkManager::SetConnectionSettings(const FString ip, const int32 port)
 	serverPort = port;
 }
 
+UNetworkManager *const UNetworkManager::GetNetworkManagerInstance()
+{
+	return this;
+}
+
 void UNetworkManager::Connect()
 {
 	// Must use SetConnectionSettings first.
@@ -126,12 +131,10 @@ void UNetworkManager::TestSend(const FString text)
 	delete packet;
 }
 
-// Receivable events.
-
-void UNetworkManager::Disconnected()
+void UNetworkManager::Disconnected_Implementation()
 {
 }
 
-void UNetworkManager::TestReceive(FString text)
+void UNetworkManager::TestReceive_Implementation(const FString& text)
 {
 }
