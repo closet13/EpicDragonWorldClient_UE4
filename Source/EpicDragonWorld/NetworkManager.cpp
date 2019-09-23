@@ -28,10 +28,6 @@ void UNetworkManager::SetConnectionSettings(const FString ip, const int32 port)
 	serverPort = port;
 }
 
-UNetworkManager *const UNetworkManager::GetNetworkManagerInstance()
-{
-	return this;
-}
 
 void UNetworkManager::Connect()
 {
@@ -55,7 +51,7 @@ void UNetworkManager::Connect()
 	bool connected = socket->Connect(*addr);
 	if (connected)
 	{
-		std::thread listen(&UNetworkManager::ChannelRead, this);
+		std::thread listen(ChannelRead);
 		listen.detach();
 	}
 
@@ -131,10 +127,10 @@ void UNetworkManager::TestSend(const FString text)
 	delete packet;
 }
 
-void UNetworkManager::Disconnected_Implementation()
+void UNetworkManager::Disconnected()
 {
 }
 
-void UNetworkManager::TestReceive_Implementation(const FString& text)
+void UNetworkManager::TestReceive(const FString& text)
 {
 }

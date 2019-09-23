@@ -14,32 +14,27 @@ class EPICDRAGONWORLD_API UNetworkManager : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 
-public:
 	UFUNCTION(BlueprintCallable, Category = "MMORPG Networking")
-	UNetworkManager *const GetNetworkManagerInstance();
 
-	UFUNCTION(BlueprintCallable, Category = "MMORPG Networking")
-	void SetConnectionSettings(const FString ip, const int32 port);
+	static void SetConnectionSettings(const FString ip, const int32 port);
 
 	UFUNCTION(BlueprintCallable, Category = "MMORPG Networking")
-	void Connect();
+	static void Connect();
 
-	void ChannelRead();
+	static void ChannelRead();
 
-	void ChannelSend(const uint8_t* data, const uint16_t size);
+	static void ChannelSend(const uint8_t* data, const uint16_t size);
 
 	// Sendable information.
 
 	UFUNCTION(BlueprintCallable, Category = "MMORPG Networking|Sendable Information|Test Send")
-	void TestSend(const FString text);
+	static void TestSend(const FString text);
 
 	// Receivable events.
 
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "MMORPG Networking|Receivable Events|Disconnected")
-	void Disconnected();
-	virtual void Disconnected_Implementation();
+	UFUNCTION(BlueprintCallable, Category = "MMORPG Networking|Receivable Events|Disconnected")
+	static void Disconnected();
 
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "MMORPG Networking|Receivable Events|Test Receive")
-	void TestReceive(const FString& text);
-	virtual void TestReceive_Implementation(const FString& text);
+	UFUNCTION(BlueprintCallable, Category = "MMORPG Networking|Receivable Events|Test Receive")
+	static void TestReceive(const FString& text);
 };
