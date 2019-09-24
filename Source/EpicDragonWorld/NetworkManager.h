@@ -14,8 +14,9 @@ class EPICDRAGONWORLD_API UNetworkManager : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 
-	UFUNCTION(BlueprintCallable, Category = "MMORPG Networking")
+public:
 
+	UFUNCTION(BlueprintCallable, Category = "MMORPG Networking")
 	static void SetConnectionSettings(const FString ip, const int32 port);
 
 	UFUNCTION(BlueprintCallable, Category = "MMORPG Networking")

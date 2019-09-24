@@ -28,7 +28,6 @@ void UNetworkManager::SetConnectionSettings(const FString ip, const int32 port)
 	serverPort = port;
 }
 
-
 void UNetworkManager::Connect()
 {
 	// Must use SetConnectionSettings first.
@@ -84,8 +83,9 @@ void UNetworkManager::ChannelRead()
 			switch (packet->ReadShort())
 			{
 				case 1:
-					FString text = packet->ReadString();
-					TestReceive(text);
+					FString readText = packet->ReadString();
+					UE_LOG(LogTemp, Warning, TEXT("Recieved text: %s"), *FString(readText));
+					TestReceive(readText);
 					break;
 			}
 			delete packet;
