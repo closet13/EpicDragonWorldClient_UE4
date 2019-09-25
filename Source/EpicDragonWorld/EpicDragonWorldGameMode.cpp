@@ -1,4 +1,4 @@
-// Epic Dragon World 2018-2019
+// Copyright (c) 2018-current Pantelis Andrianakis
 
 #include "EpicDragonWorldGameMode.h"
 #include "EpicDragonWorldCharacter.h"
